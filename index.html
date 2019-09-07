@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- версия для разработки, отображает полезные предупреждения в консоли -->
+    <script src="https://unpkg.com/vue"></script>
+    <link href="lol.css" rel="stylesheet">
+
+</head>
+<body>
+<div id="app">
+
+    <h1> Резюме </h1>
+    <h2> Общяя информация </h2>
+    <div class="info">
+        <div class="info__neme">Имя:{{firstname}}</div>
+        <div class="info__lastname">Фамилия: {{lastname}}</div>
+        <div class="info__age">Возраст:{{age}}</div>
+        <button v-on:click="rev">
+            постареть
+        </button>
+    </div>
+    <h2> О себе </h2>
+    <p>{{about}}</p>
+
+    <h2> Опыт работы  </h2>
+    <div class="work">
+        <div class="work__organization">Название организации: {{work[0].organization}}</div>
+        <div class="work__phone">Телефоны:
+            <ul>
+                <li>{{work[0].directory[0].name}} : {{work[0].directory[0].phone}}</li>
+                <li>{{work[0].directory[1].name}} : {{work[0].directory[1].phone}} </li>
+                <li>{{work[0].directory[2].name}} : {{work[0].directory[2].phone}}</li>
+            </ul>
+        </div>
+        <div class="work__email"> Email:{{work[0].email}} </div>
+        <div class="work__address">Адрес: {{work[0].address}} </div>
+        <div class="work__salary">Зарплата: {{work[0].salary}}</div>
+
+    </div>
+
+    <div class="work">
+        <div class="work__organization">Название организации:{{work[1].organization}} </div>
+        <div class="work__phone">Телефоны:
+            <ul>
+                <li>{{work[1].directory[0].name}} : {{work[1].directory[0].phone}} </li>
+                <li>{{work[1].directory[1].name}} : {{work[1].directory[1].phone}} </li>
+
+            </ul>
+        </div>
+        <div class="work__email">Email:{{work[1].email}}</div>
+        <div class="work__address">Адрес:{{work[1].address }} </div>
+        <div class="work__salary">Зарплата: {{work[1].salary }} </div>
+
+    </div>
+
+    <div class="work">
+        <div class="work__organization">Название организации:{{work[2].organization}} </div>
+        <div class="work__phone">Телефоны:
+            <ul>
+                <li> {{work[2].directory[0].name}} : {{work[2].directory[0].kosmo}} </li>
+
+
+            </ul>
+        </div>
+        <div class="work__email">Email:{{work[2].email}}</div>
+        <div class="work__address">Адрес:{{work[2].address}} </div>
+        <div class="work__salary">Зарплата:{{work[2].salary}}</div>
+
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
